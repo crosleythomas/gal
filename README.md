@@ -13,3 +13,8 @@ python3.11 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
+
+Set up your environment variables with the following command (and add your API keys)
+```
+cp .env.example .env.local
+```
