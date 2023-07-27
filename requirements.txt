@@ -1,0 +1,8 @@
+unstructured[local-inference]
+python-dotenv
+openai
+langchain
+chromadb
+tiktoken
+deepgram-sdk
+guardrails-ai
