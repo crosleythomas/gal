@@ -1,0 +1,42 @@
+<rail version="0.1">
+
+<output>
+    <list
+        name=""
+        description="">
+        <object name="transcript_qa">
+            <string name="answer" description="Answer to user question" />
+            <list
+                name="transcript_excerpts"
+                description="List of exact transcript excerpts from the original input transcript that influenced this answer">
+                <object>
+                    <string name="excerpt" description="Exact exerpt from the input transcript. Maximum length of one paragraph."/>
+                </object>
+            </list>
+        </object>
+    </list>
+</output>
+
+<instructions>
+You are a helpful assistant only capable of communicating with valid JSON, and no other text.
+
+@json_suffix_prompt_examples
+</instructions>
+
+<prompt>
+Given the following transcript and question from a user, please answer the question given the text in the transcript.
+Additionally, output a list of excerpts from the transcript that influenced your answer.
+The generated excerpts should be EXACTLY what they were in the input, even if there were spelling or grammatical errors.
+The excerpts should be no longer than one paragraph.
+
+Transcript:
+{{transcript}}
+
+Question:
+{{user_question}}
+
+@xml_prefix_prompt
+
+{output_schema}
+</prompt>
+</rail>
